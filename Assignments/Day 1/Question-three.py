@@ -7,7 +7,25 @@
 
 import random
 import string
-input("What password strength do you want ? ")
+# x = input("Want weak strength password: ") 
+# y = input("Want medium strength password:")
+z = input("Want strong strength password:")
 def password_generator(password_strength):
-    password_strength = len(8)
+    password_strength = 8
+#     weak_password = ''.join(random.choice(string.ascii_uppercase)) 
+#     for i in range(password_strength) :
+#         if x == "yes":
+#             print(weak_password)
+    
+#     medium_password = ''.join(random.choice(string.ascii_letters))
+#     for i in range(password_strength):
+#         if y == "yes":
+#             print(medium_password)
+    
+    strong_password = ''.join(random.choice(string.printable))
+    for i in range (password_strength):
+        if z == "yes":
+            print(strong_password)
+
+print(password_generator(f"Random password is: "))
 

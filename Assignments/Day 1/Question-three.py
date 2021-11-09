@@ -5,27 +5,33 @@
 #For extra credit:
 # ● Ask the user how strong they want their password to be.
 
+
 import random
 import string
-# x = input("Want weak strength password: ") 
-# y = input("Want medium strength password:")
-z = input("Want strong strength password:")
-def password_generator(password_strength):
-    password_strength = 8
-#     weak_password = ''.join(random.choice(string.ascii_uppercase)) 
-#     for i in range(password_strength) :
-#         if x == "yes":
-#             print(weak_password)
-    
-#     medium_password = ''.join(random.choice(string.ascii_letters))
-#     for i in range(password_strength):
-#         if y == "yes":
-#             print(medium_password)
-    
-    strong_password = ''.join(random.choice(string.printable))
-    for i in range (password_strength):
-        if z == "yes":
-            print(strong_password)
 
-print(password_generator(f"Random password is: "))
+def password_generator(password_strength):
+  password = []
+  if password_strength == "weak":
+    for a in range(8):
+      password.append(random.choice(string.ascii_lowercase))
+  elif password_strength == "medium":
+    for a in range(10):
+      password.append(random.choice(string.ascii_letters))
+  
+  elif password_strength == "strong":
+    for a in range(12): 
+      password.append(random.choice(string.printable))
+
+  return ''.join(password)
+
+while True:
+  password_strength = input("Enter the password strength:\n weak\n medium\n strong\n: ")
+  if password_strength == "weak" or password_strength =="medium" or password_strength == "strong": 
+    break
+  else:
+    print("enter valid password strength")
+#print(random.choice(string.ascii_lowercase))
+
+print(password_generator(password_strength))
+   
 

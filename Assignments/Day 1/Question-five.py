@@ -9,6 +9,9 @@
 # print(remove_duplicates(["a","b","c","a","d","c","e"]))
 
 def convert_list_to_dict(mylist):
+    '''
+    
+    '''
     mydict={}
     for i in mylist:
         mydict[i]= None
